@@ -8,7 +8,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 export class ColorCardComponent {
   @Input() color: string;
 
-  @Output() click = new EventEmitter();
+  @Output() colorClick = new EventEmitter();
 
   getStyle() {
     return {
@@ -17,6 +17,6 @@ export class ColorCardComponent {
   }
 
   handleClick() {
-    this.click.emit();
+    this.colorClick.emit();
   }
 }

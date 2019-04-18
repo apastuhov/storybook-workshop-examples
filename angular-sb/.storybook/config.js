@@ -1,5 +1,6 @@
-import { configure, addParameters } from '@storybook/angular';
-import { themes } from '@storybook/theming';
+import { configure, addParameters, addDecorator } from '@storybook/angular';
+// import { themes } from '@storybook/theming';
+import { withA11y } from '@storybook/addon-a11y';
 
 // Option defaults:
 addParameters({
@@ -23,7 +24,7 @@ addParameters({
      * where to show the addon panel
      * @type {('bottom'|'right')}
      */
-    panelPosition: 'right',
+    panelPosition: 'bottom',
     /**
      * sorts stories
      * @type {Boolean}
@@ -62,10 +63,16 @@ addParameters({
      * @type {Boolean}
      */
     isToolshown: true,
-    // theme: themes.dark,
+    // theme: themes.white,
     theme: undefined,
   },
+  backgrounds: [
+    { name: 'white', value: '#eee', default: true },
+    { name: 'black', value: '#333' },
+  ],
 });
+
+addDecorator(withA11y);
 
 // automatically import all files ending in *.stories.ts
 const req = require.context('../src', true, /\.stories\.ts$/);

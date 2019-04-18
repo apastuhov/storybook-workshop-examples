@@ -1,4 +1,19 @@
-module.exports = async ({ config }) => console.dir(config.plugins, { depth: null }) || config;
+module.exports = async ({ config }) => {
+  config.module.rules.push({
+    test: /\.stories\.ts?$/,
+    loaders: [
+      {
+        loader: require.resolve('@storybook/addon-storysource/loader'),
+        options: { parser: 'typescript' },
+      },
+    ],
+    enforce: 'pre',
+  });
+
+  console.dir(config.plugins, { depth: null });
+
+  return config;
+};
 
 // Merging the loaders from your app’s webpack.config.js with storybook’s
 
