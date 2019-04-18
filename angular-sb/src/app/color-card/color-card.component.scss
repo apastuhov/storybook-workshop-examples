@@ -1,0 +1,24 @@
+.card-wrapper {
+  height: 200px;
+  width: 150px;
+  padding: 0px;
+  background: #FFF;
+  filter: drop-shadow(0px 0px 5px #666);
+  display: flex;
+  flex-flow: column;
+  cursor: pointer;
+
+  > div {
+    flex: 1;
+    display: block;
+    width: 100%;
+  }
+
+  > h3 {
+    flex: none;
+    font-family: sans-serif;
+    font-weight: bold;
+    padding: 10px;
+    margin: 0;
+  }
+}
