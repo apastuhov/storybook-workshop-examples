@@ -7,13 +7,13 @@ import { linkTo } from '@storybook/addon-links';
 import MyButton from './MyButton';
 import Welcome from './Welcome';
 
-storiesOf('Welcome', module).add('to Storybook', () => ({
+storiesOf('Vue|Into/Welcome', module).add('to Storybook', () => ({
   components: { Welcome },
   template: '<welcome :showApp="action" />',
   methods: { action: linkTo('Button') },
 }));
 
-storiesOf('Button', module)
+storiesOf('Vue|Into/Button', module)
   .add('with text', () => ({
     components: { MyButton },
     template: '<my-button @click="action">Hello Button</my-button>',
