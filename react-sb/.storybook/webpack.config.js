@@ -1,6 +1,20 @@
 module.exports = async ({ config }) => {
     config.module.rules.push({
-        test: /\.stories\.js?$/,
+        test: /\.(ts|tsx)$/,
+        use: [
+            {
+                loader: require.resolve('awesome-typescript-loader'),
+            },
+            // Optional
+            {
+                loader: require.resolve('react-docgen-typescript-loader'),
+            },
+        ],
+    });
+    config.resolve.extensions.push('.ts', '.tsx');
+
+    config.module.rules.push({
+        test: /\.stories\.(ts|tsx)?$/,
         loaders: [
             {
                 loader: require.resolve('@storybook/addon-storysource/loader'),
