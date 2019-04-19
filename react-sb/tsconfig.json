@@ -20,6 +20,7 @@
     "jsx": "preserve"
   },
   "include": [
+    ".storybook/typings.d.ts",
     "src"
   ]
 }
