@@ -3,6 +3,7 @@ import React from 'react';
 import { storiesOf, forceReRender } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withNotes } from '@storybook/addon-notes';
+import { withInfo } from '@storybook/addon-info';
 import centered from '@storybook/addon-centered/react';
 import { text, withKnobs } from '@storybook/addon-knobs';
 
@@ -11,8 +12,9 @@ import notes from './color-card.doc.md';
 
 storiesOf('ColorCard', module)
   .addDecorator(withKnobs)
-  .addDecorator(centered)
+  // .addDecorator(centered)
   .addDecorator(withNotes)
+  .addDecorator(withInfo)
   .addParameters({
     notes,
   })
@@ -25,7 +27,8 @@ storiesOf('ColorCard', module)
         color={color}
         click={action('clicked')}
       />
-    }
+    },
+    { info: { inline: true } }
   )
   .add(
     'dynamic',
