@@ -28,7 +28,12 @@ storiesOf('ColorCard', module)
         click={action('clicked')}
       />
     },
-    { info: { inline: true } }
+    {
+      info: {
+        text: notes,
+        inline: true,
+      },
+    }
   )
   .add(
     'dynamic',

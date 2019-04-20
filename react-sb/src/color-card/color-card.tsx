@@ -6,6 +6,9 @@ interface IProps {
   click: () => void;
 }
 
+/**
+ * JSDoc as documentation example. But without hot reload for JSDoc.
+ */
 class ColorCard extends Component<IProps> {
   render() {
     return (
