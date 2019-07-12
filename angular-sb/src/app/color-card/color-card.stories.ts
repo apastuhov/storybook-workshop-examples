@@ -9,7 +9,7 @@ import notes from './color-card.doc.md';
 
 storiesOf('ColorCard', module)
   .addDecorator(withKnobs)
-  .addDecorator(centered)
+  // .addDecorator(centered)
   .addDecorator(withNotes)
   .addDecorator(moduleMetadata({
     declarations: [
@@ -32,7 +32,7 @@ storiesOf('ColorCard', module)
   .add(
     'simple via template',
     () => ({
-      template: '<app-color-card [color]="mycolor" (colorClick)="onclick()"></app-color-card>',
+      template: '<app-color-card [color]="mycolor" (colorClick)="onclick($event)"></app-color-card>',
       props: {
         mycolor: text('mycolor', '#6644ff'),
         onclick: action('clicked'),
