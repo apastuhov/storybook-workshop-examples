@@ -43,7 +43,7 @@
     "@storybook/addon-viewport": "^5.0.10",
     "babel-preset-vue": "^2.0.2",
     "lint-staged": "^8.1.5",
-    "node-sass": "^4.9.0",
+    "node-sass": "^7.0.0",
     "sass-loader": "^7.1.0",
     "ts-jest": "^23.0.0",
     "@types/storybook__addon-actions": "^3.4.2",
